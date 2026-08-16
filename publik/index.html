@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WA Rental Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="loginPage" class="login-page">
+  <div class="login-card">
+    <div class="brand"><span class="logo">W</span><div><b>WA RENTAL</b><small>PRO PLATFORM</small></div></div>
+    <h1>Selamat datang kembali.</h1>
+    <p class="muted">Kelola rental perangkat dari satu dashboard.</p>
+    <form id="loginForm">
+      <label>Email<input id="email" type="email" value="admin@example.com" required></label>
+      <label>Password<input id="password" type="password" value="change-this-password" required></label>
+      <button class="primary">Masuk ke Dashboard <span>→</span></button>
+      <div id="loginError" class="error"></div>
+    </form>
+  </div>
+</div>
+
+<div id="app" hidden>
+<aside>
+  <div class="brand"><span class="logo">W</span><div><b>WA RENTAL</b><small>PRO PLATFORM</small></div></div>
+  <nav><a class="active">Overview</a><a>Perangkat</a><a>Rental Saya</a><a>Transaksi</a></nav>
+  <div class="side-bottom"><div class="secure">● Sistem aman<br><small>Auto-sync aktif</small></div><button id="logout" class="ghost">Keluar</button></div>
+</aside>
+<main>
+  <header class="top"><div><span class="muted">Dashboard</span><h2>Overview</h2></div><div class="user"><div><b id="userName"></b><small id="userRole"></small></div><span class="avatar">U</span></div></header>
+  <section class="welcome"><div><small>GOOD EVENING</small><h1>Halo, <span id="hello"></span> 👋</h1><p>Semua sistem berjalan otomatis dan tersinkron.</p></div><div class="balance"><small>Saldo tersedia</small><strong id="balance">Rp0</strong></div></section>
+  <section class="stats">
+    <div class="stat"><span class="icon">◈</span><small>Total Perangkat</small><strong id="total">0</strong><em id="available">0 tersedia</em></div>
+    <div class="stat"><span class="icon">↗</span><small>Perangkat Disewa</small><strong id="rented">0</strong><em>Realtime</em></div>
+    <div class="stat"><span class="icon">◷</span><small>Rental Aktif Saya</small><strong id="active">0</strong><em>Auto-expire</em></div>
+    <div class="stat"><span class="icon">✓</span><small>Status Sistem</small><strong>Online</strong><em>Semua normal</em></div>
+  </section>
+  <section class="content-grid">
+    <div class="panel">
+      <div class="panel-head"><div><h3>Perangkat tersedia</h3><p>Pilih perangkat dan tentukan durasi rental.</p></div><span class="live">● LIVE</span></div>
+      <div id="devices"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><div><h3>Rental terbaru</h3><p>Aktivitas akun Anda.</p></div></div>
+      <div id="rentals"></div>
+    </div>
+  </section>
+  <footer>WA Rental Pro · Automated rental management</footer>
+</main>
+</div>
+<div id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>
